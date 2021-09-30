@@ -6,12 +6,24 @@ public class LinkedListBasedImpl implements StackOfInts {
 
     @Override
     public int pop() {
-        throw new IllegalStateException("To be implemented");
+        if(numOfElems != 0){
+            int uwu = node.elem;
+            node = node.next;
+            return uwu;
+        }
+
+        throw new IllegalStateException("list is empty");
     }
 
     @Override
     public void push(int x) {
-        throw new IllegalStateException("To be implemented");
+        Node node1 = new Node(x);
+        if (numOfElems != 0){
+            node1.next = node;
+        }
+        node = node1;
+        numOfElems++;
+        throw new IllegalStateException("list is empty");
     }
 
     @Override
@@ -21,7 +33,10 @@ public class LinkedListBasedImpl implements StackOfInts {
 
     @Override
     public int peek() {
-        throw new IllegalStateException("To be implemented");
+        if (numOfElems != 0){
+            return node.elem;
+        }
+        throw new IllegalStateException("list is empty");
     }
 
     private static class Node {
@@ -34,4 +49,5 @@ public class LinkedListBasedImpl implements StackOfInts {
     }
 
     private int numOfElems = 0;
+    private Node node;
 }
