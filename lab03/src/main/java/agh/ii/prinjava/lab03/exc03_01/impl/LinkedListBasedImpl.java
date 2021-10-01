@@ -6,12 +6,24 @@ public class LinkedListBasedImpl implements QueueOfInts {
 
     @Override
     public void enqueue(int x) {
-        throw new IllegalStateException("To be implemented");
+        Node node1 = new Node(x, first, null);
+        if (numOfElems == 0){
+            last = node1;
+        }
+        first = node1;
+        numOfElems++;
     }
 
     @Override
     public int dequeue() {
-        throw new IllegalStateException("To be implemented");
+        if(numOfElems != 0){
+            int uwu = last.elem;
+            last = last.prev;
+            last.next = null;
+            numOfElems--;
+            return uwu;
+        }
+        throw new IllegalStateException("Fail : Queue empty");
     }
 
     @Override
@@ -21,7 +33,11 @@ public class LinkedListBasedImpl implements QueueOfInts {
 
     @Override
     public int peek() {
-        throw new IllegalStateException("To be implemented");
+        if (numOfElems != 0){
+            return last.elem;
+        }
+        throw new IllegalStateException("Fail : Queue empty");
+        );
     }
 
     private static class Node {

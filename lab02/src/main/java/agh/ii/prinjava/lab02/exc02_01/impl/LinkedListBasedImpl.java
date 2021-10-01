@@ -9,6 +9,7 @@ public class LinkedListBasedImpl implements StackOfInts {
         if(numOfElems != 0){
             int uwu = node.elem;
             node = node.next;
+            numOfElems--;
             return uwu;
         }
 
