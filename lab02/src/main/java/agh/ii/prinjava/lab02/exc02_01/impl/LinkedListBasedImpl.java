@@ -49,5 +49,5 @@ public class LinkedListBasedImpl implements StackOfInts {
     }
 
     private int numOfElems = 0;
-    private Node node;
+    private Node node = null;
 }
