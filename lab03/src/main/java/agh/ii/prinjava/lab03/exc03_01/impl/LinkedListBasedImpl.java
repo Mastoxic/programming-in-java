@@ -10,6 +10,9 @@ public class LinkedListBasedImpl implements QueueOfInts {
         if (numOfElems == 0){
             last = node1;
         }
+        else {
+            first.prev = node1;
+        }
         first = node1;
         numOfElems++;
     }
@@ -19,7 +22,9 @@ public class LinkedListBasedImpl implements QueueOfInts {
         if(numOfElems != 0){
             int uwu = last.elem;
             last = last.prev;
-            last.next = null;
+            if(numOfElems > 1){
+                last.next = null;
+            }
             numOfElems--;
             return uwu;
         }
