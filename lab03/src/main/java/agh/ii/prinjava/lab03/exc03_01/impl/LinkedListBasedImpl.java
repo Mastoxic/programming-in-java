@@ -42,7 +42,6 @@ public class LinkedListBasedImpl implements QueueOfInts {
             return last.elem;
         }
         throw new IllegalStateException("Fail : Queue empty");
-        );
     }
 
     private static class Node {
