@@ -60,7 +60,8 @@ interface PlayWithMovies {
     static Map<String, Set<String>> ex05() {
         Map<String, Long> directors = ex04();
         return directors.entrySet()
-                .stream().collect(Collectors.toMap(m -> m.getKey(), m -> ex01(m.getKey())));
+                .stream()
+                .collect(Collectors.toMap(m -> m.getKey(), m -> ex01(m.getKey())));
     }
 
     /**
